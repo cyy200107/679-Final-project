@@ -57,6 +57,25 @@ Performance metrics:
 
 > *Results are illustrative and vary depending on selected features and random seed.*
 
+Deep Learning Extension (Optional)
+In addition to traditional models, we experimented with neural network-based approaches using recurrent architectures:
+
+Simple LSTM
+A single-layer LSTM model was trained independently on San Juan (SJ) and Iquitos (IQ) data. It uses a rolling window of 12 weeks of historical features to predict dengue case counts.
+
+City	Model	MAE	RMSE
+SJ	Simple LSTM	~13–16	~20–22
+IQ	Simple LSTM	~8–10	~12–14
+
+Bidirectional LSTM
+A Bidirectional LSTM layer was used to capture both past and future context from the input window, potentially enhancing temporal learning.
+
+City	Model	MAE	RMSE
+SJ	Bidirectional LSTM	~12–15	~18–21
+IQ	Bidirectional LSTM	~7–9	~11–13
+
+Deep learning models were implemented in Keras using TensorFlow backend and trained on standardized, forward-filled feature windows of size 12.
+
 ## 📈 Visualizations
 - Correlation heatmaps
 - Feature importance plots
